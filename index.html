@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="صفحه رسمی نادر قاضی پور - توسعه‌دهنده حرفه‌ای بک‌اند با تخصص در [تکنولوژی‌ها]">
+    <meta name="keywords" content="برنامه‌نویس بک‌اند, توسعه‌دهنده سرور, Node.js, Python, Django, API, پایگاه داده, نادر قاضی پور">
+    <meta name="author" content="نادر قاضی پور">
+    <meta property="og:title" content="نادر قاضی پور | توسعه‌دهنده بک‌اند">
+    <meta property="og:description" content="صفحه رسمی نادر قاضی پور - توسعه‌دهنده حرفه‌ای بک‌اند">
+    <meta property="og:image" content="https://example.com/path/to/image.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="theme-color" content="#1e40af">
+    <link rel="canonical" href="https://example.com">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <title>نادر قاضی پور | توسعه‌دهنده حرفه‌ای بک‌اند</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            light: '#93c5fd',
+                            DEFAULT: '#3b82f6',
+                            dark: '#1e40af',
+                        },
+                        secondary: {
+                            light: '#d1d5db',
+                            DEFAULT: '#6b7280',
+                            dark: '#374151',
+                        },
+                        terminal: {
+                            bg: '#1e1e1e',
+                            text: '#f8f8f2',
+                            green: '#50fa7b',
+                            blue: '#8be9fd',
+                            purple: '#bd93f9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts.css">
+    
+    <style>
+        body {
+            background-color: #f3f4f6;
+            color: #111827;
+        }
+        
+        .terminal-theme {
+            background-color: #1e1e1e;
+            color: #f8f8f2;
+            border: 1px solid #333;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .command-line {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .command-prompt {
+            color: #50fa7b;
+        }
+        
+        .cursor-blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .keycap {
+            background-color: #374151;
+            color: #f3f4f6;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: monospace;
+            box-shadow: 0 2px 0 #111827;
+        }
+        
+        .server-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.2s ease;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #50fa7b }
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <header class="terminal-theme py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="bg-blue-600 p-2 rounded-lg mr-3">
+                        <i class="fas fa-server text-white text-2xl"></i>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-terminal-green">
+                        <span class="text-terminal-blue">[</span>
+                        <span class="typing-effect">نادر قاضی پور</span>
+                        <span class="cursor-blink">_</span>
+                        <span class="text-terminal-blue">]</span>
+                    </h1>
+                </div>
+                
+                <nav>
+                    <ul class="flex space-x-6 space-x-reverse">
+                        <li><a href="#about" class="text-terminal-text hover:text-terminal-green transition">درباره من</a></li>
+                        <li><a href="#skills" class="text-terminal-text hover:text-terminal-green transition">مهارت‌ها</a></li>
+                        <li><a href="#projects" class="text-terminal-text hover:text-terminal-green transition">پروژه‌ها</a></li>
+                        <li><a href="#contact" class="text-terminal-text hover:text-terminal-green transition">تماس</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="terminal-theme py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-terminal-green">
+                        <span class="text-terminal-blue">$ </span>سلام، من یک توسعه‌دهنده بک‌اند هستم
+                    </h2>
+                    <p class="text-lg text-terminal-text mb-6">
+                        من در ساخت و بهینه‌سازی سیستم‌های سمت سرور تخصص دارم. APIهای کارآمد، پایگاه‌های داده مقیاس‌پذیر و معماری‌های امن از جمله کارهای من هستند.
+                    </p>
+                    <div class="command-line bg-terminal-bg-dark p-4 rounded-lg mb-6" dir="ltr">
+                        <div class="flex items-center mb-2">
+                            <span class="command-prompt mr-2">$</span>
+                            <span class="text-terminal-text">npm init backend-project</span>
+                        </div>
+                        <div class="text-terminal-purple text-sm">
+                            <p>> Creating optimal server architecture...</p>
+                            <p>> Configuring database connections...</p>
+                            <p>> Implementing secure authentication...</p>
+                            <p>> Backend project ready to deploy!</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#contact" class="bg-terminal-green text-terminal-bg px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                            همکاری با من
+                        </a>
+                        <a href="#projects" class="border border-terminal-green text-terminal-green px-6 py-3 rounded-lg font-bold hover:bg-terminal-green hover:bg-opacity-10 transition">
+                            نمونه کارها
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 bg-terminal-bg-dark rounded-full overflow-hidden border-4 border-terminal-purple">
+                            <div class="w-full h-full bg-terminal-secondary flex items-center justify-center">
+                                <i class="fas fa-user-secret text-6xl text-terminal-text"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-terminal-bg-dark p-3 rounded-lg border border-terminal-blue">
+                            <div class="flex items-center">
+                                <span class="text-terminal-green mr-2"><i class="fas fa-code"></i></span>
+                                <span class="text-terminal-text text-sm">در حال کدنویسی...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-primary-dark pb-2">درباره من</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="terminal-theme p-6 rounded-lg w-full max-w-xs">
+                        <div class="bg-terminal-bg-dark p-4 rounded mb-4">
+                            <div class="flex items-center text-terminal-green mb-2">
+                                <i class="fas fa-id-card mr-2"></i>
+                                <span>اطلاعات شخصی</span>
+                            </div>
+                            <ul class="text-terminal-text text-sm">
+                                <li class="mb-1"><span class="text-terminal-blue">نام:</span> [نام کامل]</li>
+                                <li class="mb-1"><span class="text-terminal-blue">تخصص:</span> توسعه بک‌اند</li>
+                                <li class="mb-1"><span class="text-terminal-blue">تجربه:</span> [X] سال</li>
+                                <li class="mb-1"><span class="text-terminal-blue">محل سکونت:</span> [شهر]</li>
+                                <li class="mb-1"><span class="text-terminal-blue">وضعیت:</span> در دسترس برای پروژه‌های جدید</li>
+                            </ul>
+                        </div>
+                        <div class="bg-terminal-bg-dark p-4 rounded">
+                            <div class="flex items-center text-terminal-green mb-2">
+                                <i class="fas fa-keyboard mr-2"></i>
+                                <span>ابزارهای روزمره</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="keycap">Ctrl</span>
+                                <span class="keycap">Alt</span>
+                                <span class="keycap">Del</span>
+                                <span class="keycap">SSH</span>
+                                <span class="keycap">CLI</span>
+                                <span class="keycap">API</span>
+                                <span class="keycap">DB</span>
+                                <span class="keycap">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">من کی هستم؟</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        من یک توسعه‌دهنده بک‌اند با [X] سال تجربه در طراحی و پیاده‌سازی سیستم‌های سمت سرور هستم. عاشق حل مسائل پیچیده و ایجاد راه‌حل‌های مقیاس‌پذیر و کارآمد هستم.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        در طول سال‌های فعالیت حرفه‌ای، روی پروژه‌های متنوعی از استارتاپ‌های کوچک تا سیستم‌های سازمانی بزرگ کار کرده‌ام. تمرکز اصلی من روی ساخت APIهای امن و پرسرعت، طراحی معماری‌های میکروسرویس و بهینه‌سازی عملکرد سرور است.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-gray-100 p-4 rounded-lg flex items-center">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">[X]+</h4>
+                                <p class="text-sm text-gray-600">پروژه پایگاه داده</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg flex items-center">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">[X]+</h4>
+                                <p class="text-sm text-gray-600">API طراحی شده</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg flex items-center">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">[X,XXX]+</h4>
+                                <p class="text-sm text-gray-600">ساعت کدنویسی</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center text-primary-dark font-bold hover:text-primary-light transition">
+                        دانلود رزومه کامل
+                        <i class="fas fa-download mr-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-primary-dark pb-2">مهارت‌های فنی</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="terminal-theme p-6 rounded-lg server-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-terminal-green text-terminal-bg p-2 rounded-full mr-3">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-terminal-text">سمت سرور</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-green rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Node.js / Express</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-green rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Python / Django</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-green rounded-full ml-2"></span>
+                            <span class="text-terminal-text">PHP / Laravel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-green rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Java / Spring Boot</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-green rounded-full ml-2"></span>
+                            <span class="text-terminal-text">RESTful & GraphQL APIs</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="terminal-theme p-6 rounded-lg server-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-terminal-blue text-terminal-bg p-2 rounded-full mr-3">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-terminal-text">پایگاه داده</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-blue rounded-full ml-2"></span>
+                            <span class="text-terminal-text">MongoDB</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-blue rounded-full ml-2"></span>
+                            <span class="text-terminal-text">PostgreSQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-blue rounded-full ml-2"></span>
+                            <span class="text-terminal-text">MySQL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-blue rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Redis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-blue rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Elasticsearch</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="terminal-theme p-6 rounded-lg server-card">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-terminal-purple text-terminal-bg p-2 rounded-full mr-3">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-terminal-text">DevOps & دیگر مهارت‌ها</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-purple rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Docker & Kubernetes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-purple rounded-full ml-2"></span>
+                            <span class="text-terminal-text">AWS / GCP</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-purple rounded-full ml-2"></span>
+                            <span class="text-terminal-text">CI/CD Pipelines</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-purple rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Git & GitHub</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-terminal-purple rounded-full ml-2"></span>
+                            <span class="text-terminal-text">Linux Server</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="terminal-theme p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-terminal-green flex items-center" dir="ltr">
+                    <i class="fas fa-terminal mr-2"></i>
+                    <span>زمان پاسخگویی سرورهای من</span>
+                </h3>
+                <div class="w-full bg-terminal-bg-dark rounded-lg h-6 mb-2">
+                    <div class="bg-terminal-green h-full rounded-lg" style="width: 98%"></div>
+                </div>
+                <div class="flex justify-between text-terminal-text text-sm">
+                    <span>0ms</span>
+                    <span>98% uptime</span>
+                    <span>200ms</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-primary-dark pb-2">پروژه‌های اخیر</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="terminal-theme rounded-lg overflow-hidden server-card">
+                    <div class="h-48 bg-terminal-bg-dark flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-5xl text-terminal-purple"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-terminal-green">سیستم مدیریت محتوای سازمانی</h3>
+                        <p class="text-terminal-text mb-4">یک سیستم مدیریت محتوای سفارشی با قابلیت مقیاس‌پذیری بالا برای سازمان‌های بزرگ</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">Node.js</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">MongoDB</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">Microservices</span>
+                        </div>
+                        <a href="#" class="text-terminal-green hover:text-terminal-blue transition flex items-center">
+                            مشاهده جزئیات
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="terminal-theme rounded-lg overflow-hidden server-card">
+                    <div class="h-48 bg-terminal-bg-dark flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-5xl text-terminal-purple"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-terminal-green">پلتفرم تجارت الکترونیک</h3>
+                        <p class="text-terminal-text mb-4">بک‌اند یک فروشگاه اینترنتی با قابلیت پردازش هزاران تراکنش در دقیقه</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">Django</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">PostgreSQL</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">Redis</span>
+                        </div>
+                        <a href="#" class="text-terminal-green hover:text-terminal-blue transition flex items-center">
+                            مشاهده جزئیات
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="terminal-theme rounded-lg overflow-hidden server-card">
+                    <div class="h-48 bg-terminal-bg-dark flex items-center justify-center">
+                        <i class="fas fa-comments text-5xl text-terminal-purple"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-terminal-green">سیستم چت بلادرنگ</h3>
+                        <p class="text-terminal-text mb-4">یک سیستم چت با قابلیت‌های پیشرفته و تاخیر بسیار کم</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">WebSocket</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">Node.js</span>
+                            <span class="bg-terminal-bg-dark text-terminal-blue px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-terminal-green hover:text-terminal-blue transition flex items-center">
+                            مشاهده جزئیات
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-flex items-center bg-primary-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                    مشاهده همه پروژه‌ها
+                    <i class="fas fa-arrow-left mr-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">
+                <span class="border-b-4 border-primary-dark pb-2">تماس با من</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">آماده همکاری هستم</h3>
+                    <p class="text-gray-600 mb-6">
+                        اگر به دنبال یک توسعه‌دهنده بک‌اند با تجربه برای پروژه بعدی خود هستید، یا سوالی در مورد کارهای من دارید، از طریق فرم زیر یا اطلاعات تماس با من در ارتباط باشید.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>&nbsp;&nbsp;
+                            <div>
+                                <h4 class="font-bold text-gray-800">ایمیل</h4>
+                                <p class="text-gray-600">example@domain.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-phone"></i>
+                            </div>&nbsp;&nbsp;
+                            <div>
+                                <h4 class="font-bold text-gray-800">تلفن</h4>
+                                <p class="text-gray-600">+98 XXX XXX XXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary-light text-primary-dark p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>&nbsp;&nbsp;
+                            <div>
+                                <h4 class="font-bold text-gray-800">آدرس</h4>
+                                <p class="text-gray-600">[آدرس شما]</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">من را در شبکه‌های اجتماعی دنبال کنید</h4>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="bg-gray-200 text-gray-700 p-3 rounded-full hover:bg-primary-light hover:text-primary-dark transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 text-gray-700 p-3 rounded-full hover:bg-blue-500 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 text-gray-700 p-3 rounded-full hover:bg-blue-400 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 text-gray-700 p-3 rounded-full hover:bg-red-500 hover:text-white transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="terminal-theme p-6 rounded-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-terminal-text mb-2">نام شما</label>
+                            <input type="text" id="name" class="w-full bg-terminal-bg-dark border border-terminal-secondary text-terminal-text rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-terminal-green">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-terminal-text mb-2">ایمیل</label>
+                            <input type="email" id="email" class="w-full bg-terminal-bg-dark border border-terminal-secondary text-terminal-text rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-terminal-green">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="subject" class="block text-terminal-text mb-2">موضوع</label>
+                            <input type="text" id="subject" class="w-full bg-terminal-bg-dark border border-terminal-secondary text-terminal-text rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-terminal-green">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="block text-terminal-text mb-2">پیام</label>
+                            <textarea id="message" rows="4" class="w-full bg-terminal-bg-dark border border-terminal-secondary text-terminal-text rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-terminal-green"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-terminal-green text-terminal-bg py-3 rounded-lg font-bold hover:bg-opacity-90 transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            ارسال پیام
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="terminal-theme py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold text-terminal-green flex items-center" dir="ltr">
+                        <i class="fas fa-terminal mr-2"></i>
+                        <span>نادر قاضی پور</span>
+                    </h2>
+                    <p class="text-terminal-text text-sm">توسعه‌دهنده حرفه‌ای بک‌اند</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-terminal-text mb-2">تمامی حقوق برای <a href="https://ble.ir/devhub" style="color: gold;">روزمره یک برنامه نویس</a> محوظ است © <span id="year"></span></p>
+                    <p class="text-terminal-blue text-sm">ساخته شده با <i class="fas fa-heart text-terminal-green"></i> و ☕</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-6 left-6 bg-primary-dark text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        const typingText = document.querySelector('.typing-effect');
+        const phrases = ['توسعه‌دهنده بک‌اند', 'برنامه‌نویس سرور', 'متخصص API', 'نادر قاضی پور'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isEnd = false;
+        
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isEnd = true;
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 1000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+            
+            const speedUp = Math.random() * (100 - 50) + 50;
+            const normalSpeed = Math.random() * (200 - 100) + 100;
+            const time = isEnd ? 2000 : isDeleting ? speedUp / 2 : normalSpeed;
+            
+            setTimeout(type, time);
+        }
+        
+        window.addEventListener('load', () => {
+            setTimeout(type, 1000);
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
